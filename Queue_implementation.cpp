@@ -3,55 +3,73 @@ using namespace std;
 
 const int S = 5;
 
-class Queue {
+class Queue
+{
 private:
     int arr[S];
     int front, rear;
+
 public:
-    Queue() {
+    Queue()
+    {
         front = -1;
         rear = -1;
     }
 
-    void dequeue() {
+    void dequeue()
+    {
         // Check if the queue is empty
-        if (front == -1 && rear == -1) {
+        if (front == -1 && rear == -1)
+        {
             cout << "Queue Underflow: deletion not allowed\n";
-        } else {
+        }
+        else
+        {
             // Increment the front index to remove the element
             front++;
             // If the front index has crossed the rear index,
             // reset both front and rear to -1 to indicate an empty queue
-            if (front > rear) {
+            if (front > rear)
+            {
                 front = rear = -1;
             }
         }
     }
 
-    void enqueue(int y) {
+    void enqueue(int y)
+    {
         // Check if the queue is full
-        if (rear == S - 1) {
+        if (rear == S - 1)
+        {
             cout << "Queue overflow: addition not allowed\n";
-        } else {
+        }
+        else
+        {
             // Increment the rear index and add the element to the queue
             rear++;
             arr[rear] = y;
-            cout<<"Element "<<y << " was added to the queue."<<endl;
+            cout << "Element " << y << " was added to the queue." << endl;
             // If the front index is still -1, update it to 0
-            if (front == -1) {
+            if (front == -1)
+            {
                 front = 0;
             }
         }
     }
 
-    void display() {
+    void display()
+    {
         // Check if the queue is empty
-        if (front == -1 && rear == -1) {
+        if (front == -1 && rear == -1)
+        {
             cout << "Queue is empty.\n";
-        } else {
+        }
+        else
+        {
             // Print the elements in the queue
             cout << "Elements in the queue: ";
-            for (int i = front; i <= rear; i++) {
+            for (int i = front; i <= rear; i++)
+            {
                 cout << arr[i] << " ";
             }
             cout << endl;
@@ -59,7 +77,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     // Create a new instance of the Queue class
     Queue q;
     // Test dequeue operation on an empty queue

@@ -8,20 +8,20 @@ using namespace std;
 // Function to perform arithmetic operations
 int performOperation(char op, int num1, int num2)
 {
-    switch(op)
+    switch (op)
     {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return num1 / num2;
-        case '%':
-            return num1 % num2;
-        case '^':
-            return pow(num1, num2);
+    case '+':
+        return num1 + num2;
+    case '-':
+        return num1 - num2;
+    case '*':
+        return num1 * num2;
+    case '/':
+        return num1 / num2;
+    case '%':
+        return num1 % num2;
+    case '^':
+        return pow(num1, num2);
     }
     return -1;
 }
@@ -30,10 +30,10 @@ int performOperation(char op, int num1, int num2)
 int evaluateSuffixExpression(string exp)
 {
     stack<int> stack;
-    for(int i = 0; i < exp.length(); i++)
+    for (int i = 0; i < exp.length(); i++)
     {
         char c = exp[i];
-        if(isdigit(c))
+        if (isdigit(c))
         {
             // Convert the character to integer and push onto the stack
             stack.push(c - '0');
@@ -60,9 +60,9 @@ int evaluateSuffixExpression(string exp)
 int main()
 {
     string exp;
-    cout<<"Enter Suffix Expression: ";
+    cout << "Enter Suffix Expression: ";
     getline(cin, exp);
     int result = evaluateSuffixExpression(exp);
-    cout<<"Result: "<<result;
+    cout << "Result: " << result;
     return 0;
 }
