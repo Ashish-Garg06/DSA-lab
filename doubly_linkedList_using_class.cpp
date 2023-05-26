@@ -30,7 +30,7 @@ public:
     }
 
     // Insert a new node at the end of the list
-    void insert(int value)
+    void insert_at_end(int value)
     {
         Node *Newnode = new Node(value);
         if (Head == nullptr)
@@ -84,13 +84,13 @@ int main()
 
     for (int i = 1; i <= 100; i++)
     {
-        myList.insert(i);
+        myList.insert_at_end(i);
     }
 
     myList.displayfrombeginning();
 
     cout << "\n \n";
-    
+
     myList.displayfromend();
 
     return 0;

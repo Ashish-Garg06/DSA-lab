@@ -14,58 +14,56 @@ public:
     }
 };
 
-class LinkedList
+class Single_Linked_list
 {
 private:
-    Node *head;
+    Node *Head;
 
 public:
-    LinkedList()
+    Single_Linked_list()
     {
-        head = nullptr;
+        Head = nullptr;
     }
 
-    void insert(int value)
+    void insert_at_end(int value)
     {
-        Node *newNode = new Node(value);
-
-        if (head == nullptr)
+        Node *Newnode = new Node(value);
+        if (Head == nullptr)
         {
-            head = newNode;
+            Head = Newnode;
         }
         else
         {
-            Node *current = head;
+            Node *current = Head;
             while (current->next != nullptr)
             {
                 current = current->next;
             }
-            current->next = newNode;
+            current->next = Newnode;
         }
     }
 
-    void display()
+    void Traverse_linked_list()
     {
-        Node *current = head;
+        cout << "\n";
+        Node *current = Head;
         while (current != nullptr)
         {
             cout << current->data << " ";
             current = current->next;
         }
-        cout << endl;
+        cout << "\n";
     }
 };
-
 int main()
 {
-    LinkedList myList;
+    Single_Linked_list mylist;
 
-    myList.insert(5);
-    myList.insert(10);
-    myList.insert(15);
-    myList.insert(20);
+    for (int i = 1; i <= 100; i++)
+    {
+        mylist.insert_at_end(i);
+    }
 
-    myList.display();
-
+    mylist.Traverse_linked_list();
     return 0;
 }
